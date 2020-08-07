@@ -4,7 +4,8 @@
 
 	const datos = {
 		"img":"img/back.png",
-        "datosIn":"http://localhost:5000/data/data.json"
+        "datosIn":"http://localhost:5000/data/data.json",
+        "datosInstagram":"https://www.instagram.com/daniel.arango.villegas/?__a=1"
 	}
 
 	let datosInst;
@@ -15,17 +16,15 @@
     let imagenes = [];
 
     // Make a request for a user with a given ID
-    axios.get(datos.datosIn)
+    axios.get(datos.datosInstagram)
     .then(function (response) {
-
+        console.log(response);
         nombre = response.data.graphql.user.full_name;
         titulo = response.data.graphql.user.biography;
         perfil = response.data.graphql.user.username;
         fotoPerfil = response.data.graphql.user.profile_pic_url;
         imagenes = response.data.graphql.user.edge_owner_to_timeline_media.edges;
-
         console.log(imagenes);
-        
     })
     .catch(function (error) {
         console.log(error);
@@ -46,15 +45,16 @@
                     <h5 class="mt-0">{nombre}</h5>
                     {titulo}
                     <br>
-                    <a href="http://instagram.com/{perfil}" target="blanc_"><i class="fab fa-instagram"></i> - @{perfil}</a>
+                    <a href="http://instagram.com/{perfil}" class="boton-link" target="blanc_"><i class="fab fa-instagram icono"></i> - @{perfil}</a>
                 </div>
             </div>
             <hr>
             <div class="row fondo">
                 {#each imagenes as img}
                     <div class="col-md-4 espacio">
-                        <img class="img_ img-responsive borde" title="{img.node.accessibility_caption}" alt="{img.node.accessibility_caption}" src="{img.node.display_url}">
-                        <!-- <small class="autor">Autor: {nombre}</small> -->
+                        <a href="{img.node.display_url}" target="blank_">
+                            <img class="img_ img-responsive borde" title="{img.node.accessibility_caption}" alt="{img.node.accessibility_caption}" src="{img.node.display_url}">
+                        </a>
                     </div>
                 {/each}
             </div>
@@ -74,10 +74,23 @@
 	.contenedor-cabecera{
         padding: 30px;
 	}
-	a{
+    a{
 		text-decoration: none !important;
-		color:blueviolet;
+        color: #9E9E9E;
+        font-weight: 700;
 	}
+    a:hover{
+		text-decoration: none !important;
+        color: #9E9E9E;
+        font-weight: 700;
+	}
+    .icono{
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 20px;
+    }
     .img_{
         width: 100%;
     }
