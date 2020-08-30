@@ -4,9 +4,8 @@
 
 	const datos = {
 		"img":"img/back.png",
-        "datosIn":"http://localhost:5000/data/data.json",
         "datosInstagram":"https://www.instagram.com/daniel.arango.villegas/?__a=1"
-	}
+    }
 
 	let datosInst;
 	let titulo;
@@ -18,13 +17,11 @@
     // Make a request for a user with a given ID
     axios.get(datos.datosInstagram)
     .then(function (response) {
-        console.log(response);
         nombre = response.data.graphql.user.full_name;
         titulo = response.data.graphql.user.biography;
         perfil = response.data.graphql.user.username;
         fotoPerfil = response.data.graphql.user.profile_pic_url;
         imagenes = response.data.graphql.user.edge_owner_to_timeline_media.edges;
-        console.log(imagenes);
     })
     .catch(function (error) {
         console.log(error);
@@ -32,6 +29,7 @@
     .then(function () {
         // always executed
     });
+
 </script>
 
     <section class="banner" style="background-image: url('{datos.img}');"></section>

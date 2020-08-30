@@ -18,19 +18,21 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			<div class="navbar-nav">
-				<a class="nav-item nav-link" href="#"><NavLink to="/">Home</NavLink></a>
-				<a class="nav-item nav-link" href="#"><NavLink to="biografia">Biografia</NavLink></a>
+				<NavLink to="/"><a class="a nav-item nav-link" href="#">Inicio</a></NavLink>
+				<NavLink to="biografia"><a class="nav-item nav-link" href="#">Biografia</a></NavLink>
 			</div>
 			</div>
 		</nav>
-		<div>
+
+	<div>
 		<Route path="/" component="{Home}" />
 		<Route path="biografia" component="{Biografia}" />
 	</div>
 </Router>
 
 <style>
-	a{
+	.a{
 		color: white !important;
+		text-decoration: none !important;
 	}
 </style>
