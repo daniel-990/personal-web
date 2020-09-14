@@ -1,27 +1,6 @@
 <script>
     import axios from "axios";
 	import { onMount } from "svelte";
-	
-	/*
-
-	const datosBlog = {
-        "datos":"https://server-personal.herokuapp.com/json-blog.php"
-    };
-
-    let contenido = [];
-    
-    axios.get(datosBlog.datos)
-    .then(function (response) {
-        console.log(response.data);
-    })
-    .catch(function (error) {
-        console.log(error);
-    })
-    .then(function () {
-        // always executed
-    });
-	
-	*/
 
 	const datos = {
 		"img":"img/back.png",
