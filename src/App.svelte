@@ -40,7 +40,17 @@
 
 </script>
 
-    <section class="banner" style="background-image: url('{datos.img}');"></section>
+    <section class="banner" style="background-image: url('{datos.img}');">
+        
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="https://server-personal.herokuapp.com/">
+            <span class="badge badge-primary">
+                <i class="fas fa-caret-left"></i>
+            </span>
+            Atras
+            </a>
+        </nav>
+    </section>
 	<section class="contenedor-cabecera">
         <div class="container">
             <!-- <img src="{datos.img}" class="img-fluid" alt=""> -->
