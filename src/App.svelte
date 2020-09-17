@@ -3,7 +3,8 @@
 	import { onMount } from "svelte";
 
 	const datos = {
-		"img":"img/back.png",
+        "img":"img/back.png",
+        "imgFooter":"img/footer.png",
         "datosInstagram":"https://www.instagram.com/daniel.arango.villegas/?__a=1",
         "datosWeb":"https://server-personal.herokuapp.com/json-blog.php"
     }
@@ -41,7 +42,6 @@
 </script>
 
     <section class="banner" style="background-image: url('{datos.img}');">
-        
         <nav class="navbar navbar-dark bg-dark">
             <a class="navbar-brand" href="https://server-personal.herokuapp.com/">
             <span class="badge badge-primary">
@@ -51,7 +51,7 @@
             </a>
         </nav>
     </section>
-	<section class="contenedor-cabecera">
+	<section class="contenedor-cabecera" style="background-image: url('{datos.imgFooter}');">
         <div class="container">
             <!-- <img src="{datos.img}" class="img-fluid" alt=""> -->
             <hr>
@@ -110,6 +110,11 @@
     }
 	.contenedor-cabecera{
         padding: 30px;
+        position: relative;
+        top: -57px;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: contain;
 	}
     a{
 		text-decoration: none !important;
